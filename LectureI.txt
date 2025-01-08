@@ -1,0 +1,236 @@
+# Java-Sheet (Madhur's Cheat Sheet)
+
+
+------------------------------------------------------------------------------------<CHAPTER-I>-------------------------------------------------------------------------------------------------
+
+
+src(.java) -------> byteCode(.class) ------------------jvm interprets the byte-code(.class) & JIT(just-in-time compiles the interpreted bytye-code to --> )---------------------->(machine-code) 
+           javac                                  
+                          (Platform-Independence) [Any machine that has 'jvm' can execute the .class file]
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------<CHAPTER-II>------------------------------------------------------------------------------------------------
+
+
+
+
+# Java Oops
+- Style of programming, Where we organize our programs around data rather than logic & objects rather than actions.
+
+**Class** - Blueprint that outlines the structure of our program.
+
+**Object** - Programming representation of real-world entity.
+
+- JVM creates objects, With the help of Class, Hence called 'blueprint'.
+
+                                            
+Class(Blueprint) -------------------------> JVM ----------------------> Objects
+                  with the help of class    |          creates
+                                            |
+                                            | state & behaviour information
+                                            |
+                                            |
+                                        Programmer(US)  
+
+
+- Now Programmer needs to provide more information, JVM is concerned about just 2 information about any object:
+   - **State**: Represents it's properties, The 'attributes' possibly distinguishing 1 object from the other.
+   - **Behaviour**: Represents the actions Object might perform.
+
+- *Note*: Behaviours are represented via non-static methods.
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------<CHAPTER-III>-----------------------------------------------------------------------------------------------
+
+
+
+## public static void main(String[] args){}:
+
+   - main method: [Entry-point of out program]
+
+   - String[]: To accept the `cli` arguments.
+
+   - args: Accessible as array of string. [can be hello/apple/args/etc]
+
+   - Can also write: (String...args) [Allows method to accept 0 or more arguments.]
+
+
+
+
+- **Primitive-Data-Type**                                      | - **Non-Primitive-Data-Type**
+  - Are passed by values                                       |   - Are passed by reference
+  - Basic data-types [Pre-defined].                            |   - Reference-Type.
+  - Are not objects.                                           |   - Are Objects.
+  - Immutable.                                                 |   - Immutable/ Mutable.
+  - Non-Nullable.                                              |   - Nullable.
+  - Hold data directly in memory.                              |   - Stores reference to objects.
+  - Stored in stack.                                           |   - Stored in Heap [Reference stored in stack].
+  - Doesn't have methods.                                      |   - Have methods.
+                                                               |
+  - Ex. byte, short, int, long, float, double, char, boolean...|   - Ex. ArrayList                                         [Mutable],
+                                                               |   -     Arrays[String & int], String,**Wrapper-Classes**  [Immutable].
+                                                               |   -     Custom-Classes, Objects                           [Mutable but can be made imutable]
+
+
+Note: String is an immutable object.
+
+
+// Q1: Why are primitive types immutable?
+// Ans: Primitive types represent raw values stored directly in memory and are not tied to objects or references.
+//      When you modify a primitive, a completely new value is created or assigned in memory.
+
+
+// Example 1: Primitive Type-----------------------------------------------------------------------------------------------
+
+   int a = 10;  // The value 10 is directly stored in the memory allocated for 'a'.
+   a = 20;      // A new value (20) is stored, replacing the previous value.
+
+// Example 2: String (Immutable Object)------------------------------------------------------------------------------------
+
+   String s = "hello"; // Let 's' be stored at memory address 'abcX123'.
+   s += " world";      // Concatenation creates a new String at a different address, e.g., 'xyzY456'.
+
+   System.out.println(s); // Prints "hello world".
+   // The original memory location ('abcX123') remains unchanged.
+
+
+
+
+
+
+------------------------------------------------------------------------------------<CHAPTER-IV>-----------------------------------------------------------------------------------------------
+
+
+## Pillars of Oops
+
+- **Encapsulation**: Process of wrapping data & methods into a single unit.
+
+- **Inheritence**: Process of inheriting properties of 'Parent(Super)-Class' by 'Child(Sub)-Class'.
+  
+- **Abstraction**: Process of hiding complex implementation details of an Object & Showing only the essential features of an object.
+
+- **Polymorphism**: Ability of different classes to be treated as instance of same class.
+
+
+
+
+### Detailed Explanation for Pillars of Oops
+-----------------------------------------------------------------------------------------------------------------
+
+
+- **Encapsulation**: Giving controlled access to very important aspect of application/code.
+  - Pros
+    - Enhances the Security.s
+    - Access-Control.
+    - Data-Protection.
+    - Organized-Structure.
+    - Easy-Update.
+
+  - Ex. Secure digital bagpack
+
+
+
+-----------------------------------------------------------------------------------------------------------------
+
+
+- **Inheritence**: Extending the properties from parent to child.
+  - Pros
+    - Reuseability,
+    - Minimize Duplication,
+    - No need to re-enter basic details,
+    - Core information remains same,
+    - Each feature can add it's own specialized information, While retaining basic details.
+
+  - Cons
+    - Super & Sub Class can be tightly-coupled.
+
+
+  - Ex. GrandFather ---> Father ---> Child
+
+
+  - Types:
+  - 1). Single-Level, [Base-Class ---------> Derived-Class]
+                       parent                 child
+
+
+  - 2). Multi-Level,  [Base-Class ---------> Derived-Class ---------> Derived-Class]
+                        shape                  rectangle              Equilateral-Triangle
+
+  - 3). Hierarchial,  [Base-Class ---------> Derived-Class]
+                        shape                  rectanlge
+                        |
+                        |
+                        v
+                      [Derived-Class]
+                        circle
+
+                        
+
+  - 4). Hybrid,       [Combination of above types]
+
+  - 5). Multiple,     [Doesn't Exists in Java as inheritence but rather as Interface]
+
+
+
+-----------------------------------------------------------------------------------------------------------------
+
+
+- **Abstraction**: Hiding complex implementation details from users.
+  - Pros
+    - Simplicity,
+    - Flexibility,
+    - Enhanced UX,
+    - Focus on Essentials,
+    - Provides you with essential details & information/controls without exposing complex mechanics underneath.
+
+  - Can-not be **instantiated**. (& may or may not include abstract-method). [An abstract class cannot be instantiated directly but can be subclassed.]
+
+
+
+
+
+### Q  Difference B/W Abstract-Class & Interface(Multiple-Inheritence) [Nurullah, U CAN IGNORE THE THEORY OF INTERFACE FOR NOW.... WE'LL COVER IT IN NEXT LECTURE.]
+
+- **Abstract-Class**                           | - **Interface**
+
+  - Can have both abstract & concrete method.  |   - All methods are abstract or default.
+                                               |
+  - Can have instance variables.               |   - Only constants (public static final).
+                                               |
+  - Single Level inheritence.                  |   - Achieves multiple inheritence.
+                                               |
+  - Access Modifiers.                          |   - All methods are public.
+                                               |
+  - Can have 'Constructors'.                   |   - Cannot have 'Constructors'.
+                                               |
+  - Methods can have body.                     |   - Methods can not have body untilunless they're declared as "default".
+                                               |
+  -                                            |   - @Override annotation is not mandatory but highly recommended.
+                                               |
+                                               |   - Lambda [ Way of interface ]
+
+
+-----------------------------------------------------------------------------------------------------------------
+
+
+- **Polymorphism**: Single Entity Taking multiple forms.
+  - Pros
+    - Flexibility,
+    - Single Entity taking multiple forms.
+
+  - Ex. Animal ---> Dog / Elephant / Lion etc...
+
+  - Types:
+  - 1). Compile time polymorphism [We create different-different functions but with same names.]
+  - 2). Run time polymorphism [Will learn in inheritence]
+
+
+-----------------------------------------------------------------------------------------------------------------
+

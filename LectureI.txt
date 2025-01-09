@@ -64,6 +64,67 @@ Class(Blueprint) -------------------------> JVM ----------------------> Objects
 
 
 
+---------------------------------------------------------------------------------Data-Types in .java------------------------------------------------------------------------------------------
+
+// --- Primitive Types ---
+
+boolean       // true or false
+float         // Single-precision (4 bytes) | e.g., 3.14f
+double        // Double-precision (8 bytes) | e.g., 3.14159265358979
+byte          // Integer (1 byte) | Range: -128 to 127
+short         // Integer (2 bytes) | Range: -32,768 to 32,767
+int           // Integer (4 bytes) | Range: -2^31 to 2^31-1
+long          // Integer (8 bytes) | Range: -2^63 to 2^63-1 | e.g., 123L
+char          // Single character (2 bytes) | Unicode values
+
+
+// --- Reference Types (Non-Primitive) ---
+
+String        // Ex., "Hello, Java!"
+int[]         // Array of integers
+ArrayList     // Dynamic array | java.util.ArrayList
+LinkedList    // Dynamic list | java.util.LinkedList
+Map           // Key-value pairs | java.util.HashMap
+Set           // Unique collection | java.util.HashSet
+Pair          // Tuple-like structure | javafx.util.Pair
+
+
+
+// --- Examples of Loops ---
+for (int i = 0; i < 5; i++) {
+    System.out.println(i);
+}
+
+for (int num : new int[]{1, 2, 3}) {
+    System.out.println(num);
+}
+
+// --- Stream Example ---
+IntStream.range(1, 5).forEach(System.out::println);
+
+// --- Special Cases ---
+String name = null; // Equivalent to None in Python
+ 
+
+ 
+// primitive-types (non-objects)-------------------------------
+
+// byte, short, int, long
+// float, double
+// char
+// boolean
+
+// reference-types (objects) or non-primitive-types------------
+
+// String
+// int[] & String[] arrays
+// ArrayList
+
+---------------------------------------------------------------------------------Data-Types in .java------------------------------------------------------------------------------------------
+
+
+
+
 - **Primitive-Data-Type**                                      | - **Non-Primitive-Data-Type**
   - Are passed by values                                       |   - Are passed by reference
   - Basic data-types [Pre-defined].                            |   - Reference-Type.

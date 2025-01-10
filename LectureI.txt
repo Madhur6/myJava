@@ -1,6 +1,28 @@
 # Java-Sheet (Madhur's Cheat Sheet)
 
+## Table of Contents
 
+### Chapter I: Java Basics
+- Source Code to Bytecode
+- JVM and Platform Independence
+
+### Chapter II: Object-Oriented Programming (OOP)
+- Classes and Objects
+- State and Behavior
+
+### Chapter III: Main Method
+- `public static void main(String[] args)`
+- CLI Arguments
+
+### Chapter IV: Data Types
+- Primitive vs. Reference Types
+- Examples and Characteristics
+
+### Chapter V: OOP Principles
+- Encapsulation
+- Inheritance
+- Abstraction
+- Polymorphism
 ------------------------------------------------------------------------------------<CHAPTER-I>-------------------------------------------------------------------------------------------------
 
 

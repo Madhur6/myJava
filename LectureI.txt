@@ -317,3 +317,51 @@ Note: String is an immutable object.
 
 -----------------------------------------------------------------------------------------------------------------
 
+
+-----------------------------------------------------------------------------------------------------------------
+
+
+### Polymorphism
+
+- **Static or Compile** ----------------> Method-Overloading
+        |
+        |
+        |
+        V
+      Operator-Overloading
+
+
+
+- **Dynamic or Runtime** -----------------> Virtual/Over-riding method
+  
+  - *UpCasting*: We can only access the static-methods defined in super-class(Parent)
+                 We can access the overridden-methods of child-class.
+
+
+  - *DownCasting*: We can access the sub-class specific methods.
+                   It must be done Explicitly.
+
+  
+  Parent p ================> new Child();
+  *reference*              *object-type*
+
+
+- **Static-Binding**                                  |  - **Dynamic-Binding**
+                                                      |
+  - Aka *early-binding* because method to be called   |    - The type of object is determined at runtime.
+    is determined based on the reference-type not on  |
+    the object-type.                                  |
+                                                      |
+  - Resolved at compile-time.                         |    - Resolved at run-time.
+  - Applies to static, private & final methods.       |    - Applies to over-ridden methods
+  - Based on reference-type.                          |    - Based on actual-types.
+                                                      |
+                                                      |
+                                                      |
+                                                      |
+
+- **Note**: Static-Methods can't be annotated with @Overridden.
+
+
+
+-----------------------------------------------------------------------------------------------------------------

@@ -365,3 +365,93 @@ Note: String is an immutable object.
 
 
 -----------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+**Constructors**:
+
+```Java
+
+class Student {
+    String name;
+    int age;
+
+    // In Java, If we call the class to create an object without creating the constructor, Java will automatically creates it's own constructor.
+
+    // Constructor
+    Student(){}
+    
+    // Parameterized Constructor
+    Student (String inputName, int inputAge){
+        this.name = name;
+        this.age = inputAge;
+    }
+
+
+    // Copy Constructor [But We do have to define another constructor, As we've define "Copy Constructor".]
+    Student (Student s){
+        this.name = s.name;
+        this.age = s.age;
+    }
+}
+
+```
+
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------
+
+
+# Variables in Java
+
+- Giving name to a 'memory-location' that holds some data.
+- Used in order to store the data & retrieve the data.
+
+- The value that is stored in the variable can change during the program's execution, Hence the therm "Variable".
+
+   - Java is case-sensitive.
+   - Start with a letter or _.
+   - CamelCase Convention.
+   - Avoid reserved words. (new, int etc...)
+
+   - "VAR" keyword: var number = 42 {JAVAC infers that "number" is an 'int'}.
+   - If type of var is declared, It can't change later. (String ---> int).
+
+
+- **Static-Variables**:   Variables belongs to class itself & not to any instance.
+
+- **Instance-Variables**: Variables declared inside class but outside any methods.
+
+- **Final-Variables**:    Variables can't be modified once it is initialized.
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------
+
+# Operations
+
+## Increment & Decrement Operators
+
+```Java
+
+int x = 5, y = 5;
+
+int res = x++ + ++x;  // OP: x++ uses 5, then increments to 6, Then ++x increments to 7 & uses 7.
+int res = ++y + y++;  // OP: ++y increments to 6 & uses 6, Then y++ uses 6, then increments to 7.
+
+
+```
+
+----------------------------------------------------------------------------------------------------------------------
+

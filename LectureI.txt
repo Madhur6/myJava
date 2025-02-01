@@ -39,8 +39,6 @@ src(.java) -------> byteCode(.class) ------------------jvm interprets the byte-c
 
 
 
-
-
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------<CHAPTER-II>------------------------------------------------------------------------------------------------
 
@@ -460,3 +458,106 @@ int res = ++y + y++;  // OP: ++y increments to 6 & uses 6, Then y++ uses 6, then
 
 ----------------------------------------------------------------------------------------------------------------------
 
+
+
+-----------------------------------------------------------------------------------------------------------------
+
+
+### Packages in Java
+
+
+- Contains related code (Built-In & User-Defined Packages).
+- Ex. Java.util etc...
+
+- Groups of similar types of classes, interfaces or sub-packages.
+
+- Steps to create a package:
+  - create a folder (ur_pkg_name)
+  - create a file (ur_pkg_name/file.java)
+  - Now compile the code as > `javac ur_pkg_name/file.java` > `java ur_pkg_name.file`
+  - Outside of "package", U can't use Default class, (Use public class main)
+  - if In current-working directory, No problems.
+  - else, use classPath (an env. variable) ---> Temporary (Set ClassPath == `package-path;main-file path`).
+                                        OR ---> Permanent (Set env. variable)
+
+
+
+-----------------------------------------------------------------------------------------------------------------
+
+## Access Modifiers in Java
+
+- Types:
+
+modifiers   - Same-Class      | - Same Package      | - Same Pkg          | - Diff. Pkg       | - Diff. Pkg 
+                              |   & Sub-class       |   & non-subclass    |  & Sub-Class      | & non-sub-class
+
+private         yes                  no                    no                   no                   no
+
+default         yes                  yes                   yes                  no                   no
+
+protected       yes                  yes                   yes                  yes                  no
+
+public          yes                  yes                   yes                  yes                  yes
+
+
+
+- **Note**: The access-modifiers for an overriding method can allow more but not les access to the over-ridden-method.
+
+  - Ex. a protected instance method in super-class can be made public, But not private in sub-class.
+
+  - final / static / private methods can-not be overridden.
+
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------
+
+
+## Handeling Exceptions in Java
+
+
+java.lang --------------> object --------------------> throwable --------------------> Errors
+                                                          |
+                                                          |
+                                                          |
+                                                          V
+                                                        Exceptions
+
+### Types
+
+- **Checked-Exception**: [Compile-Time] Classes that directly inherit throwable class.
+
+    - IOException [FileNotFoundException, EofException]
+    - SQLException
+    - NetWork & Class Exceptions
+
+- **Unchecked-Exception**: [Run-Time] Ex. Arithmetic, IndexOutOfBounds, ClassCast & NullPointer Exception.
+
+    - [NullPointerException, IndexOutOfBounds Exception]
+    - [ClassCastException, Array, NullPointer, NumberFormatting, IllegalArgument] 
+
+- **Errors**: [OutOfMemoryError, StackOverFlowError]
+
+
+
+### Try-Catch-Finally
+
+- **Try**: Allows you to define a block of code to be tested for errors while it's being executed.
+- **Catch**: Allows you to define a block of code to be executed if an error occurs in the 'try' block.
+- **Finally**: Let's you execute code, After `try...catch` block, Regardless the result.
+
+
+### Throw / Throws
+
+- **Throw**: Allows you to create a custom-errors, & is used together with an exception type. There're many exception types available in java.
+
+    - Arithmetic Exception,
+    - FileNoteFoundException,
+    - ArrayIndexOutOfBoundsException,
+    - SecurityException,
+
+- **Throws**: Used to define which type of exception can be occured, It is written besides the methods.
+
+
+-----------------------------------------------------------------------------------------------------------------

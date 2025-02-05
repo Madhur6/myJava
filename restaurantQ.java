@@ -29,6 +29,11 @@ class Restaurant {
 
     public HashMap<String, Integer> getFreqMap(){return freqMap;}
     public void setFreqMap(String dish, int price){this.freqMap.put(dish, price);}
+
+    @Override
+    public String toString(){
+        return "Id: " + this.id + " Rating: " + this.rating + " Name: " + this.name + " no of dishes: " + this.noOfDishes;
+    }
 }
 
 public class restaurantQ{
@@ -65,21 +70,49 @@ public class restaurantQ{
 
             restList.add(r);
         }
+        // ask user for ID
+        System.out.print("Enter id to check for restaurant: ");
+        int checkId = sc.nextInt();
 
-        int len = restList.size();
-        for (int i = 0; i < len; i++){
-            System.out.println("*-----------*-------------*------------*");
-            System.out.println("Restaurant " + (i+1) + ": ");
-            Restaurant rObj = restList.get(i);
-            System.out.println("restaurant " + (i+1) + " id: " + rObj.getId());
-            System.out.println("restaurant " + (i+1) + " rating: " + rObj.getRating());
-            System.out.println("restaurant " + (i+1) + " name: " + rObj.getName());
-            System.out.println("restaurant " + (i+1) + " no of dishes: " + rObj.getNoOfDishes());
-            System.out.println("*-----------*-------------*------------*");
+        // It should return the restaurant object which corresponds to that particular "checkID".
+        restaurantQ obj = new restaurantQ();
+        Restaurant resObj = obj.findRestaurantById(restList, checkId);  
+        System.out.println(resObj);   
+
+        // int len = restList.size();
+        // for (int i = 0; i < len; i++){
+        //     System.out.println("*-----------*-------------*------------*");
+        //     System.out.println("Restaurant " + (i+1) + ": ");
+        //     Restaurant rObj = restList.get(i);
+        //     System.out.println("restaurant " + (i+1) + " id: " + rObj.getId());
+        //     System.out.println("restaurant " + (i+1) + " rating: " + rObj.getRating());
+        //     System.out.println("restaurant " + (i+1) + " name: " + rObj.getName());
+        //     System.out.println("restaurant " + (i+1) + " no of dishes: " + rObj.getNoOfDishes());
+        //     System.out.println("*-----------*-------------*------------*");
+        // }
+    }
+
+
+    // Q. Create a method that returns restaurant with a specific id?
+
+
+    public Restaurant findRestaurantById(ArrayList<Restaurant> arr, int checkId){
+        // for-each loop
+        Restaurant res = null;
+        for(Restaurant r: arr){
+            if (r.getId() == checkId){
+                res = r;
+            }
         }
+        // for (int i = 0; i < arr.size(); i++){
+        //     Restaurant r = arr.get(i);
+        // }
+        return res;
     }
 }
 
+// ASSIGNMENT:
+// MODIFY THE CURRENT METHOD TO RETURN NULL AND PRINT "NO RESTAURANT FOUND FOR THIS ID" WHEN checkId DO NOT MATCH WITH ANY RESTAURANT?
 
 // Example Input [ Copy the example input to run this program ]:
 // 2
@@ -99,3 +132,4 @@ public class restaurantQ{
 // noodles
 // 567
 // dumplings
+// 001

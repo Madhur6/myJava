@@ -36,10 +36,15 @@
 - Exceptions,
 
 
+### Chapter VIII: Arrays
+- Basics of Arrays
+- Basics of ArrayLists
+
+
 ------------------------------------------------------------------------------------<CHAPTER-I>-------------------------------------------------------------------------------------------------
 
 
-src(.java) -------> byteCode(.class) ------------------jvm interprets the byte-code(.class) & JIT(just-in-time compiles the interpreted bytye-code to --> )---------------------->(machine-code) 
+src(.java) -------> byteCode(.class) ------------------jvm interprets the byte-code(.class) & JIT(just-in-time compiles the interpreted byte-code to --> )---------------------->(machine-code) 
            javac                                  
                           (Platform-Independence) [Any machine that has 'jvm' can execute the .class file]
 
@@ -88,7 +93,7 @@ Class(Blueprint) -------------------------> JVM ----------------------> Objects
 
    - main method: [Entry-point of out program]
 
-   - String[]: To accept the `cli` arguments.
+   - String[]: To accept the `cli` arguments. (command line interface)
 
    - args: Accessible as array of string. [can be hello/apple/args/etc]
 
@@ -158,7 +163,6 @@ String name = null; // Equivalent to None in Python
 
 
 ---------------------------------------------------------------------------------Data-Types in .java------------------------------------------------------------------------------------------
-
 
 
 
@@ -260,7 +264,8 @@ Note: String is an immutable object.
 
   - 2). Multi-Level,  [Base-Class ---------> Derived-Class ---------> Derived-Class]
                         shape                  rectangle              Equilateral-Triangle
-
+                      
+              
   - 3). Hierarchial,  [Base-Class ---------> Derived-Class]
                         shape                  rectanlge
                         |
@@ -326,7 +331,7 @@ Note: String is an immutable object.
   - Ex. Animal ---> Dog / Elephant / Lion etc...
 
   - Types:
-  - 1). Compile time polymorphism [We create different-different functions but with same names.]
+  - 1). Compile time polymorphism [We create different-different functions but with same name.]
   - 2). Run time polymorphism [Will learn in inheritence]
 
 
@@ -564,4 +569,110 @@ java.lang --------------> object --------------------> throwable ---------------
 - **Throws**: Used to define which type of exception can be occured, It is written besides the methods.
 
 
+
+
 -----------------------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------<CHAPTER-VIII>-----------------------------------------------------------------------------------------------
+// Arrays
+// Basics of Arrays
+
+- Structure that allows us to store multiple elements of same type in a single variable.
+
+
+# How to declare an array:
+
+- type[] arrayName
+
+- Dynamic array:     [ type[] arrayName = {x,y,z,...} ]
+
+- Pre-Defined array: [ type[] arrayName = new type[n]; ] where n can be any natural number ie. 0 to 14
+
+- new keyword:       Allows us to allocate memory to our array using "new" keyword
+
+
+# Setting & Access an element of an array:
+
+- arr[0] = 1; // Setting the 0th element of our array as 1
+
+- System.out.println(arr[0]); // Printing the 0th element of our array
+
+
+
+# Array length
+
+- int len = arr.length; // using the "length" property of array
+
+
+
+
+# More details about arrays
+
+- Dynamically Allocated
+
+- Arrays may be stored in contiguous memory [consecutive memory locations].
+
+- Arrays are object and ordered (from 0).
+
+- An array can be single-dimensional or multi-dimensional *.
+
+- Array size is static & fixed length
+
+- Faster, Because of the static size nature
+
+- Can store primitive types (int, string, boolean, char, ...)
+
+- Adding element. (arr[0] = value)
+
+- Generics are not supported.
+
+
+
+
+// Basic of ArrayLists---------------------------------------------------------------------------------------------------------------
+
+
+- ArrayList is dynamic in size & have more flexibility.
+
+
+# How to declare an arrayList:
+
+- ArrayList<type> arrayName = new ArrayList<>();
+
+- new keyword:       Allows us to allocate memory to our array using "new" keyword
+
+
+
+# Setting & Access an element of an array:
+
+- arr.add(1);  // adding element at the end to our arrayList
+
+- arr.set(1, "element"); // Setting the 0th element of our array as 1
+
+- System.out.println(arr.get(0)); // Printing the 0th element of our array
+
+
+
+# Array length
+
+- int len = arr.size(); // using the "size()" method of array
+
+
+
+
+
+# More details about ArrayList
+
+- ArrayList can be only a single-dimensional.
+
+- user for-each loop / iterator / ListIterator.
+
+- We can access length by using "size()".
+
+- Array size is Dynamic.
+
+- Relatively slower than arrays ( Because of resizing and dynamic ).
+
+- Supports generics...
+
+- Primitive data types are not directly added unlikely arrays [Added by using "autoboxing" & "unboxing" ].

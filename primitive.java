@@ -56,6 +56,8 @@ public class primitive{
 
         // Conclusion: PRIMITIVE-TYPES ARE PASSED BY VALUES...............................................
 
+
+
     }
 
     // m1-------------------------------------------------------------------------------------------------
@@ -73,3 +75,60 @@ public class primitive{
         System.out.println("Swap method done executing!");
     }
 }
+
+
+// ***----------------------------------------***-------------------------------------------***--------------------------
+
+    //     // We will be diving into little bit of programming logic...
+    //     // Third glass technique...
+    //     // Assume you have 2 drinks in 2 glasses...both of them are full...
+    //     // I ask you to swap the drinks in the glasses...?
+    //     // How would you approach it?
+
+    //     // Empty glass <--- drink 1
+    //     // drink2 -----------> glass 1
+    //     // glass2 <----------empty glass drink 
+
+
+
+// ***----------------------------------------***-------------------------------------------***--------------------------
+
+
+
+
+//         // Underlying detail that we needed to cover 
+
+//         // javascript, python
+//         // Loosely typed language
+//         // const a = 12;
+//         // a = 13; throws an error
+//         // let a = 12; // js engine which decides what type of variable it is...
+//         // a = 12
+
+
+
+
+// ***----------------------------------------***-------------------------------------------***--------------------------
+
+
+
+
+//                     old bikes 
+// Invocation: bikes? kick-start & self-start, Starting your engine via self-start...
+
+// Without kick-start/self-start, The engine won't start automatically?
+
+
+// Invocation: we're calling the function with some values or without values...
+
+
+
+
+// ***----------------------------------------***-------------------------------------------***--------------------------
+
+
+
+//     // Method: Static, But ignore static for now, Focus on method...
+//     public         static              void           Swap       (int x, int y){
+// //access-modifier  static/non-static   return type    name     arguments/parameter(0 or more are allowed)
+        

@@ -19,6 +19,9 @@ abstract class shape {
         System.out.println("This is display!");
     }
 
+
+    @Override
+    public abstract String toString();
 }
 
 
@@ -34,6 +37,13 @@ class circle extends shape {
     public double calculateArea(){
         return Math.PI*radius*radius;
     }
+
+    @Override
+	public String toString() {
+		return "Computing amount for circle of radius " + this.radius;
+	}
+
+
 }
 
 
@@ -49,11 +59,47 @@ class rectangle extends shape{
     public double calculateArea(){
         return length * width;
     }
+
+	@Override
+	public String toString() {
+		return "Computing area for Rectangle of length " + this.length + " & width: " + this.width;
+	}
+}
+
+
+class triangle extends shape {
+    public double length, width;
+
+    triangle(double length, double width){
+        this.length = length;
+        this.width = width;
+    }
+
+    @Override
+    public double calculateArea(){
+        return (((double)1/2)*(this.length * this.width));
+    }
+
+
+	@Override
+	public String toString() {
+		return "Computing area for Triangle of length " + this.length + " & width: " + this.width;
+	}
 }
 
 
 
 public class abstractEx{
+    private static double coverage;
+
+    public abstractEx(double coverage){
+        this.coverage = coverage;
+    }
+
+    public static double amount(shape obj){
+        return obj.calculateArea() / coverage;
+    }
+
     public static void main(String[] args){
         // Abstract class-[Basic]-------------------------------------------------------------
 
@@ -73,6 +119,17 @@ public class abstractEx{
         System.out.println("result of r: " + resR);
 
 
+        // Figuring out the amount of paint required for a particular surface...
+        abstractEx ax = new abstractEx(350);
+        shape c2 = new circle(4);
+		System.out.println("Amount of paint required is " + amount(c2));
+
+        shape r2 = new rectangle(10, 20);
+		System.out.println("Amount of paint required is " + amount(r2));
+
+        shape t = new triangle(10, 14);
+        System.out.println("Amount of paint required is " + amount(t));
+        
         // HomeWorK: round the result to 2 decimal points only?
     }
 }

@@ -12,15 +12,41 @@ public class sortingEx {
 		int target = 4;
 //		int res = linear_search(arr, target);
 		
-//		int res = binary_search(arr, target); // it by-default returns the index only...
+		// int res = binary_search(arr, target); // it by-default returns the index only...
+
+		int res = r_binary_search(arr, 0, arr.length-1, target);
+		System.out.println("The index would be: " + res);
 		
 //		int[] sorted_arr = selection_sort(arr, arr.length);
 		
-		int[] sorted_arr = bubble_sort(arr, arr.length);
+		// int[] sorted_arr = bubble_sort(arr, arr.length);
 		
-		System.out.println(Arrays.toString(sorted_arr));
+		// System.out.println(Arrays.toString(sorted_arr));
+
 		
 	}
+
+	// time complexity: O(logn) / omega(1) / theta(logn) [Best case is constant, If we found our target at the middle index itself!😎]
+	// space complexity: o(n)
+	public static int r_binary_search(int[] arr, int l, int r, int target){
+		if (l > r){
+			return -1;
+		}
+
+		int mid = ((l + r)/2);
+
+		if (arr[mid] == target){
+			return mid;
+		}
+		else if (arr[mid] > target){
+			return r_binary_search(arr, l, mid-1, target);
+		}
+		else {
+			return r_binary_search(arr, mid+1, r, target);
+		}
+	}
+
+
 	
 	// time comp: O(n2) & omega(n)
 	public static int[] bubble_sort(int[] arr, int n) {

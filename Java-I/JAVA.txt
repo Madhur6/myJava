@@ -1,0 +1,169 @@
+----------------------------------------------------------------------------⭐⭐ ✨ INDEX ✨ ⭐⭐------------------------------------------------------------------------------
+
+💡 CHAPTER I   : JAVA EVOLUTION TIMELINE (KEY VERSIONS) ✔
+
+----------------------------------------------------------------------------⭐⭐ ✨ INDEX ✨ ⭐⭐------------------------------------------------------------------------------
+									<< LET'S START LEARNING 😊 >>
+
+
+------------------------------------------------------------------------------⭐⭐ CHAPTER I ⭐⭐-----------------------------------------------------------------------------
+#1 JAVA EVOLUTION TIMELINE (KEY VERSIONS) ✔
+
+	- Java 1.0 (1996)	-> Basic language, AWT, applets, core classes
+	- Java 1.1 (1997)	-> Inner classes, JDBC, RMI
+	- Java 1.2 (1998)	-> (J2SE) Collections Framework (Iterator), Swing, List / Set / Map 
+	- Java 1.3 (2000)	-> Minor enhancements
+	- Java 1.4 (2002)	-> asset, NIO, regex
+	- Java 1.5 (2004)	-> (Java5) Generics, Enhanced for-loop, Annotations, Autoboxing
+	- Java 6   (2006)	-> Performance & Library updates
+	- Java 7   (2011)	-> Try-with-resources, multi-catch
+	- Java 8   (2014)	-> Lambdas, Streams, Functional Interfaces, Optional class
+	- Java 9   (2017)	-> Module system
+	- Java10-17(2018-21)	-> var, Records, Sealed classes
+	- Java 21  (2023)	-> (LTS) Leveraging Virtual Threads (Project Loom), String templates
+	- Java 25  (2025)	-> More language & JVM enhancements
+_______________________________________________________________________________________
+💡: ⭐ Collection Framework ⭐
+	- A Library 📖
+	- Collections Framework [JCF], Replaced the older "Enumeration" interface.
+	
+_______________________________________________________________________________________
+💡: Interfaces (Blueprints): 
+
+	- Defines std. behaviours for different types of collections
+		
+		Interace	    Purpose
+
+		- Collection<E>  -> Root interface for most collection types
+		- List<E>	 -> Ordered collection, Allows duplicates
+		- Set <E> 	 -> No duplicates
+		- SortedSet<E>	 -> Set with sorted order
+		- NavigableSet<E>-> Extends `SortedSet` with navigation
+		- Queue<E>	 -> FiFo collections
+		- Deque<E>	<-> Double-ended queue
+		- Map<K, V>	 -> Key-Value pairs (not part of Collection)
+		- SortedMap<K,V> -> Sorted keys in a map
+		- NavigableMap<K,V> Extended sorted map with navigation
+		- Iterable<E>	 -> Super-interface for `for-each` loop
+_______________________________________________________________________________________
+
+💡: Concrete Classes (Implementations)
+	
+	- Actual working classes we use.
+
+	⭐ List Implementations
+	  
+		Class	            Feature
+
+		- ArrayList      -> Fast, resizable array, good for indexing
+		- LinkedList     -> Doubly Linked List, Good for insertion/removal
+		- Vector 	 -> Legacy version of `ArrayList`, Synchronized
+		- Stack 	 -> Legacy, extends `Vector`(LIFO)
+
+
+	⭐ Set Implementations
+	  
+		Class	            Feature
+
+		- HashSet        -> No duplicates, No ordering
+		- LinkedHashSet  -> Maintains insertion order
+		- TreeSet	 -> Sorted Set (Uses Red-Black Tree)
+
+
+	⭐ Map Implementations
+	  
+		Class	            Feature
+
+		- HashMap        -> Key-value pairs, Fast access
+		- LinkedHashMap  -> Maintains insertion order
+		- TreeMap        -> Sorted Keys
+		- HashTable 	 -> Legacy, synchronized
+		- Properties	 -> Used for config files, extends `HashTable`
+		- WeakHashMap	 -> Keys eligible for GC when no strong ref.
+		- ConcurrentHashMap Thread-safe map (JAVA 5+)
+
+💡: JFC Hierarchy:
+	ITERABLE 
+	    ^
+	    |
+	COLLECTION
+	/   |     \
+ ARRAYLIST HASHSET PRIORITY-QUEUE
+ LINKEDLIST TREESET ARRAY-DEQUE
+
+	MAP (separate branch)
+	 ^
+	 |
+	HASH-MAP, TREE-MAP, LINKED-HASH-MAP
+
+
+
+💡: Check this out 😁
+	
+	Component		Examples			purpose
+	
+	Interfaces 		List/Set/Map/queue... 		Define std behaviours
+
+	Classes			ArrayList/HashMap/TreeSet...	Actual data structures
+
+	Utilities		Collections/Arrays/Comparator   Sorting, searching...
+				/Enumeration/Iterator/Objects
+				/ListIterator/AbstractCollection
+				/AbstractList...
+
+	Legacy classes		Vector/HashTable/Stack		For backward compatibility
+	
+	Traversal Tools		Iterator/ListIterator/		Iterate over collections
+				/Enumeration		
+
+
+
+
+_______________________________________________________________________________________
+	
+	
+💡:
+```
+public class EnumerationEx {
+	public static void main(String[] args) {
+		Vector<String> vec = new Vector<>();
+		vec.add("harry");
+		vec.add("ron");
+		vec.add("hermionne");
+		
+		Enumeration<String> e = vec.elements();
+		while (e.hasMoreElements()) {
+			String name = e.nextElement()
+			System.out.println(name);}}}
+- But Enumeration was:
+	- Read-only
+	- Lacking the "remove()" method 😒
+
+- ✨ Then came "Iterator"😮
+
+Iterator<String> it = list.iterator();
+while (it.hasNext()){
+	String item = it.next();
+	if (item.equals("foo")) it.remove(); // Safe😉 ✔
+}
+```
+_______________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

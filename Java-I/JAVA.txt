@@ -2,6 +2,16 @@
 
 💡 CHAPTER I   : JAVA EVOLUTION TIMELINE (KEY VERSIONS) ✔
 
+💡 CHAPTER II  : JAVA BASICS (Source Code to Bytecode, JVM and Platform Independence) 💫
+
+💡 CHAPTER III : Object-Oriented Programming (OOPs😅) (Classes and Objects State and Behavior)
+
+💡 CHAPTER IV  : Main Method 🦸‍♂️
+
+💡 CHAPTER V   : Data Types 🐒 (Primitive vs. Reference Types & Examples and Characteristics)
+
+
+
 ----------------------------------------------------------------------------⭐⭐ ✨ INDEX ✨ ⭐⭐------------------------------------------------------------------------------
 									<< LET'S START LEARNING 😊 >>
 
@@ -13,7 +23,7 @@
 	- Java 1.1 (1997)	-> Inner classes, JDBC, RMI
 	- Java 1.2 (1998)	-> (J2SE) Collections Framework (Iterator), Swing, List / Set / Map 
 	- Java 1.3 (2000)	-> Minor enhancements
-	- Java 1.4 (2002)	-> asset, NIO, regex
+	- Java 1.4 (2002)	-> assert, NIO, regex
 	- Java 1.5 (2004)	-> (Java5) Generics, Enhanced for-loop, Annotations, Autoboxing
 	- Java 6   (2006)	-> Performance & Library updates
 	- Java 7   (2011)	-> Try-with-resources, multi-catch
@@ -21,7 +31,7 @@
 	- Java 9   (2017)	-> Module system
 	- Java10-17(2018-21)	-> var, Records, Sealed classes
 	- Java 21  (2023)	-> (LTS) Leveraging Virtual Threads (Project Loom), String templates
-	- Java 25  (2025)	-> More language & JVM enhancements
+	- Java 25  (2025 ~)	-> More language & JVM enhancements
 _______________________________________________________________________________________
 💡: ⭐ Collection Framework ⭐
 	- A Library 📖
@@ -150,12 +160,197 @@ while (it.hasNext()){
 _______________________________________________________________________________________
 
 
+---------------------------------------------------------------------------⭐⭐ CHAPTER I ENDS ⭐⭐--------------------------------------------------------------------------
 
 
 
 
 
 
+-----------------------------------------------------------------------------⭐⭐ CHAPTER II ⭐⭐----------------------------------------------------------------------------
+#2 JAVA BASICS (Source Code to Bytecode, JVM and Platform Independence) 💫
+
+
+
+_______________________________________________________________________________________
+💡: ⭐ FLOW ⭐
+
+
+src(.java) -------> byteCode(.class) ------------------jvm loads "byte-code" & "template/byte-code-interpretor" interpretss the byte-code(.class) & JIT(just-in-time compiles frequently executed byte-code directly into --> )---------------------->(native-machine-code) ✔
+           javac                                  
+                                                                               (Platform-Independence) [Any machine that has 'jvm' can execute the .class file]
+
+⭐ Interpretor is inside the JVM (Not a separate program)
+
+
+_______________________________________________________________________________________
+
+
+
+---------------------------------------------------------------------------⭐⭐ CHAPTER II ENDS ⭐⭐-------------------------------------------------------------------------
+
+
+
+
+
+
+
+----------------------------------------------------------------------------⭐⭐ CHAPTER III ⭐⭐----------------------------------------------------------------------------
+#3 Object-Oriented Programming (OOPs😅) (Classes and Objects State and Behavior)
+
+_______________________________________________________________________________________
+💡: ⭐ Java Oops ⭐
+
+
+- Style of programming, Where we organize our programs around data rather than logic & objects rather than actions. 💡
+
+**Class**  - Blueprint that outlines the structure of our program.
+
+**Object** - Programming representation of real-world entity.
+
+- JVM creates objects, With the help of Class, Hence called 'blueprint'.
+
+                                            
+⭐ Class(Blueprint) -------------------------> JVM ----------------------> Objects
+                  with the help of class    |          creates
+                                            |
+                                            | state & behaviour information
+                                            |
+                                            |
+                                        Programmer(US)  
+
+
+- Now Programmer needs to provide more information, JVM is concerned about just 2 information about any object:
+   - **State**: Represents it's properties, The 'attributes' possibly distinguishing 1 object from the other.
+   - **Behaviour**: Represents the actions Object might perform.
+
+- *Note*: In OOPs design usually, Behaviours are represented via non-static methods. [Are typically modeled with instance-methods (non-static)]
+
+_______________________________________________________________________________________
+
+
+
+--------------------------------------------------------------------------⭐⭐ CHAPTER III ENDS ⭐⭐-------------------------------------------------------------------------
+
+
+
+
+
+
+
+-----------------------------------------------------------------------------⭐⭐ CHAPTER IV ⭐⭐----------------------------------------------------------------------------
+#4 ⭐ Main Method 🦸‍♂️ ⭐
+
+
+
+_______________________________________________________________________________________
+💡: ⭐ ENTRY POINT ⭐
+
+
+## public static void main(String[] args){}:
+
+   - main method   : [Entry-point of our program]
+
+   - String[]      : To accept the `cli` arguments. (command line interface)
+
+   - args          : Accessible as array of string. [can be hello/apple/args/etc]
+
+   - Can also write: (String...args) [Allows method to accept 0 or more arguments.] ⭐
+
+
+_______________________________________________________________________________________
+
+
+
+---------------------------------------------------------------------------⭐⭐ CHAPTER IV ENDS ⭐⭐-------------------------------------------------------------------------
+
+
+
+
+
+
+-----------------------------------------------------------------------------⭐⭐ CHAPTER V ⭐⭐-----------------------------------------------------------------------------
+#5 ⭐ Data Types 🐒 (Primitive vs. Reference Types & Examples and Characteristics) ⭐
+
+
+
+_______________________________________________________________________________________
+💡: ⭐ Data - Types in JAVA ⭐
+
+
+// --- Primitive Types ---
+
+boolean       // true or false
+float         // Single-precision (4 bytes) | e.g., 3.14f
+double        // Double-precision (8 bytes) | e.g., 3.14159265358979
+byte          // Integer (1 byte) | Range: -128 to 127
+short         // Integer (2 bytes) | Range: -32,768 to 32,767
+int           // Integer (4 bytes) | Range: -2^31 to 2^31-1
+long          // Integer (8 bytes) | Range: -2^63 to 2^63-1 | e.g., 123L
+char          // Single character (2 bytes) | Unicode values
+
+
+
+// --- Reference Types (Non-Primitive) ---
+
+String        // Ex., "Hello, Java!"
+int[]         // Array of integers
+ArrayList     // Dynamic array | java.util.ArrayList
+LinkedList    // Dynamic list | java.util.LinkedList
+Map           // Key-value pairs | java.util.HashMap
+Set           // Unique collection | java.util.HashSet
+Pair          // Tuple-like structure | javafx.util.Pair (JDK with JavaFX)
+
+
+_______________________________________________________________________________________
+
+
+
+_______________________________________________________________________________________
+💡: ⭐ DIFFERENCES ⭐
+
+
+- **Primitive-Data-Type**                                      | - **Non-Primitive-Data-Type**
+  - Are passed by values                                       |   - Are passed by reference
+  - Basic data-types [Pre-defined].                            |   - Reference-Type.
+  - Are not objects.                                           |   - Are Objects.
+  - Immutable.                                                 |   - Immutable/ Mutable.
+  - Non-Nullable.                                              |   - Nullable.
+  - Hold data directly in memory.                              |   - Stores reference to objects.
+  - Stored in stack.(local variables)                          |   - Stored in Heap [Reference stored in stack].
+  - Instance variables live "inside objects on heap"           |
+  - Doesn't have methods.                                      |   - Have methods.
+                                                               |
+  - Ex. byte, short, int, long, float, double, char, boolean...|   - Ex. ArrayList                                         [Mutable],
+                                                               |   -     Arrays[String & int], String,**Wrapper-Classes**  [Immutable].
+                                                               |   -     Custom-Classes, Objects                           [Mutable but can be made imutable]
+
+
+⭐ Note: String is an immutable object.
+
+// Q1: Why are primitive types immutable?
+// Ans: Primitive types represent raw values stored directly in memory and are not tied to objects or references.
+//      When you modify a primitive, a completely new value is created or assigned in memory.
+
+
+// Example 1: Primitive Type-----------------------------------------------------------------------------------------------
+
+   int a = 10;  // The value 10 is directly stored in the memory allocated for 'a'.
+   a = 20;      // A new value (20) is stored, replacing the previous value.
+
+
+// Example 2: String (Immutable Object)------------------------------------------------------------------------------------
+
+   String s = "hello"; // Let 's' be stored at memory address 'abcX123'.
+   s += " world";      // Concatenation creates a new String at a different address, e.g., 'xyzY456'.
+
+   System.out.println(s); // Prints "hello world".
+   // The original memory location ('abcX123') remains unchanged.
+_______________________________________________________________________________________
+
+
+
+---------------------------------------------------------------------------⭐⭐ CHAPTER V ENDS ⭐⭐--------------------------------------------------------------------------
 
 
 

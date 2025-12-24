@@ -21,7 +21,7 @@ public class whatIsMethod {
 	}
 	
 	// Behaviour of our main-class 👀
-	// 	- Typically modeled with instance method (Non-static)
+	// 	- Non-static 
 	// 	- Defines what an object of this class can-do🏃‍♂️
 	public void add(int a, int b) {
 		System.out.println(a+b);

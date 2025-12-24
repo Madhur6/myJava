@@ -35,10 +35,13 @@ public class cliEx {
          System.out.print("Enter a word: ");
          
          String t = sc.next(); // Consumes only the first / single word from the input-buffer 
-         // //USER INPUT: apple_, WILL CONSUME "apple" AS IT IS, BUT THERE IS _ LEFT IN THE BUFFER...
+         // //USER INPUT: apple_(space), WILL CONSUME "apple" AS IT IS, BUT THERE IS _ LEFT IN THE BUFFER...
          
+         // ⭐ println: < Formatted String >
+            System.out.println("The input from cli is: " + t + ":)"); // Analyze that :) doesn't contains the space that user entered!
+
          // ⭐ printf: < Formatted String >
-         System.out.printf("The input from cli is: %s", t); 
+         //  System.out.printf("The input from cli is: %s %s", t, ":)");
          
          // 💫 Without additional sc.nextLine() here,
          // 	⚠⚠⚠ scanner might think that there is something left in the input buffer...(input stream from cli)
@@ -70,39 +73,8 @@ public class cliEx {
         System.out.println("The string array: " + Arrays.toString(strArr));
         
     	// ____________________________________________________________________________________________________________________
-    	
-        // Refer to lectureI.txt's chapter 4
         
         // Also try, sc.nextInt() / sc.nextFloat() / sc.nextDouble() / sc.nextBoolean() / sc.nextByte() / sc.nextShort() 😎
-   
-        
-     // ------------------------------------------------------------------------------------<CHAPTER-IV>-----------------------------------------------------------------------------------------------
-     // Data - Types in JAVA
-
-     // --- Primitive Types ---
-        
-     //     boolean       // true or false
-     //     float         // Single-precision (4 bytes) | e.g., 3.14f
-     //     double        // Double-precision (8 bytes) | e.g., 3.14159265358979
-     //     byte          // Integer (1 byte) | Range: -128 to 127
-     //     short         // Integer (2 bytes) | Range: -32,768 to 32,767
-     //     int           // Integer (4 bytes) | Range: -2^31 to 2^31-1
-     //     long          // Integer (8 bytes) | Range: -2^63 to 2^63-1 | e.g., 123L
-     //     char          // Single character (2 bytes) | Unicode values
-      
-     // --- Reference Types (Non-Primitive) ---
-
-     //     String        // Ex., "Hello, Java!"
-     //     int[]         // Array of integers
-     //     ArrayList     // Dynamic array | java.util.ArrayList
-     //     LinkedList    // Dynamic list | java.util.LinkedList
-     //     Map           // Key-value pairs | java.util.HashMap
-     //     Set           // Unique collection | java.util.HashSet
-     //     Pair          // Tuple-like structure | javafx.util.Pair
-        
-     // continues... ✔
-     // ------------------------------------------------------------------------------------<CHAPTER-IV>-----------------------------------------------------------------------------------------------
-        
 
     }
 }

@@ -29,9 +29,9 @@ public class staticMethod {
     	// Methods from different class
         Apple a = new Apple();
         System.out.println(a.concreteMethod());
-//        System.out.println(Apple.concreteMethod()); // I can not do this, Because it is a "concrete-method".
-        System.out.println(Apple.staticMethod()); // I can access this from class itself, Because it is a "static-method".
-        System.out.println(a.staticMethod()); // But I can access it from object as well...
+//      System.out.println(Apple.concreteMethod()); // I can not do this, Because it is a "concrete-method".
+        System.out.println(Apple.staticMethod());   // I can access this from class itself, Because it is a "static-method".
+        System.out.println(a.staticMethod());       // But I can access it from object as well...
         
     }
     

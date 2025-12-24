@@ -1,0 +1,235 @@
+----------------------------------------⭐⭐ ✨ INDEX ✨ ⭐⭐----------------------------------------
+
+💡 CHAPTER I   : Pillars of OOPS🏛️
+
+💡 CHAPTER II  : 
+
+----------------------------------------⭐⭐ ✨ INDEX ✨ ⭐⭐----------------------------------------
+				                      
+									  << LET'S START LEARNING 😊 >>
+
+
+----------------------------------------⭐⭐ CHAPTER I ⭐⭐----------------------------------------
+#1 Pillars of OOPS🏛️
+
+
+⭐ ENCAPSULATION: Process of wrapping data(variables) & methods into a single unit(class)
+
+⭐ INHERITANCE  : Process by which a child(subClass) acquires properties & behaviour of a parent(superClass)
+
+⭐ ABSTRACTION  : Process of hiding complex implementation details & exposing only essential features
+
+⭐ POLYMORPHISM : Ability of different objects to be treated as instances of the same parent type
+
+_______________________________________________________________________________________
+
+💡: ⭐ ENCAPSULATION ⭐
+
+	- Giving controlled-access to the internal state of an object.
+    
+    - It is achieved using:
+        - Access modifiers (```private`, `protected`, `public````)
+        - Getter & Setter methods
+
+    ✔️ Pros
+        - Enhances security
+        - Enables Access-Control
+        - Protects data integrity
+        - Promotes organized code structure
+        - Simplifies maintenance & updates
+
+    🐥 Ex. Secure Digital Bagpack 👜
+
+
+_______________________________________________________________________________________
+
+💡: ⭐ INHERITANCE ⭐
+
+	- Allos a subClass to *extend* the properties & behaviours of a superClass.
+
+    ✔️ Pros
+        - Code Reusability
+        - Reduced duplication
+        - Common logic remains centralized
+        - SubClasses can add specialized behaviour
+
+    ❌ Cons
+        - Super & Sub Class can be tightly-coupled
+
+    🐥 Ex. GrandFather → Father → Child
+
+  
+    ✔️ ⭐ Types of Inheritance ⭐
+        
+        - 1). Single-Level, [Base-Class ---------> Derived-Class]
+                             parent                 child
+
+
+        - 2). Multi-Level,  [Base-Class ---------> Derived-Class ---------> Derived-Class]
+                               shape                rectangle             Equilateral-Triangle
+                      
+              
+        - 3). Hierarchial,  [Base-Class ---------> Derived-Class]
+                               shape                rectanlge
+                                |
+                                |
+                                v
+                            [Derived-Class]
+                              circle
+
+       
+        - 4). Hybrid,       [Combination of above 2 or more types]
+                            [Achieved in JAVA using Interfaces]
+
+        - 5). Multiple,     [Doesn't Exists in Java as inheritence]
+                            [Achieved in JAVA using Interfaces]
+
+
+
+
+_______________________________________________________________________________________
+
+💡: ⭐ ABSTRACTION ⭐
+
+    - Hiding complex implementation details from users.
+
+	- Abstraction focuses on *what an object does*, Not *How it does it*
+    
+
+    - It is achieved using:
+        - `abstract` classes
+        - `interfaces`        (100% abstraction)
+
+    ✔️ Pros
+        - Improves Simplicity
+        - Enhances flexibility
+        - Better UX
+        - Encourages focus on essential features
+        - Reduces implementation complexity
+
+    ⚠️ Notes:
+        - Abstract-Classes *cannot be instantiated*
+        
+        - They may contain:
+            - Abstract methods
+            - Concrete (implemented) methods
+        
+        - SubClasses must implement abstract methods unless they are abstract themselves 👽
+
+
+
+_______________________________________________________________________________________
+
+Q. Difference BW Abstract Class & Interface❔
+
+
+- **Abstract-Class**                           | - **Interface**
+
+  - Can have both abstract & concrete method.  |   - All methods are abstract by default.
+                                               |     [Can also have default & static methods (uses "default" keyword)]    
+                                               |
+  - Can have instance variables.               |   - Only constants (public static final).
+                                               |
+  - Single Level inheritence.(Extends 1 class) |   - Achieves multiple inheritence.
+                                               |     [A class can implement multiple interfaces]
+                                               |          
+                                               |
+  - Access Modifiers.                          |   - All methods are public.
+                                               |
+  - Can have `Constructors`                    |   - Cannot have  `Constructors`
+                                               |
+  - Methods can have body                      |   - Methods can not have body untilunless they're declared as "default" and "static" methods.
+                                               |
+  -                                            |   - @Override annotation is not mandatory but highly recommended.
+                                               |
+                                               |   - Lambda [ Functional Interfaces can be implemented using this]
+
+
+_______________________________________________________________________________________
+
+
+
+
+
+_______________________________________________________________________________________
+
+💡: ⭐ POLYMORPHISM ⭐
+
+    - One interface / parent type, Multiple implementations
+    - Ability of objects of different classes to be treated as instances of a common parent type.
+
+    ✔️ Pros
+        - Flexibility
+        - Extensibility
+        - Reduced coupling
+        - Code reusability
+
+    🐥 Ex. Animal → Dog / Elephant / Lion
+
+    
+   ✔️ ⭐ Types of Inheritance ⭐
+        
+        - 1). Compile-Time Polymorphism (Static Polymorphism):
+
+                - Achieved using ----------------> Method-OverLoading 🚛
+
+                - Decision made at *compile-time*
+
+                - Same method name, Different parameter list
+
+                - ⚠️ Java doesn't support operator-overloading (except `+` for String concatenation)
+                
+
+
+        - 2). Run-Time Polymorphism (Dynamic Polymorphism):
+
+                - Achieved using -----------------> Method-OverRiding 🚴‍♀️
+                
+                - Decision made at *runtime*
+
+                - Requires Inheritance
+
+
+
+_______________________________________________________________________________________
+
+
+- **Static-Binding**                                  |  - **Dynamic-Binding**
+                                                      |
+  - Aka *early-binding* because method to be called   |    - The type of object is determined at runtime.
+    is determined based on the reference-type not on  |      [Basically, Method Binding happens at run-time]
+    the object-type.                                  |
+                                                      |
+  - Resolved at compile-time.                         |    - Resolved at run-time.
+                                                      | 
+  - Applies to *static, private & final methods*      |    - Applies to over-ridden methods
+                                                      |    
+  - Faster execution                                  |    - Slightly slower (runtime-lookup 👀)
+                                                      |
+
+
+    ⚠️ Notes:
+        - Static-Methods can't be annotated with @Overridden.
+  
+
+    ⭐  Parent p ================> new Child();
+         *reference*              *object-type*
+
+
+    ⭐ *UpCasting*:
+            - [Implicit & Safe] 
+            - We can only access the static-methods defined in super-class(Parent)
+            - We can access the overridden-methods of child-class.
+
+
+    ⭐ *DownCasting*: 
+            - [Explicit & Risky] 
+            - Explicitly converting *parent-reference* to *child-reference*
+            - We can access the sub-class specific methods.
+            - It must be done Explicitly.
+
+_______________________________________________________________________________________
+
+
+--------------------------------------⭐⭐ CHAPTER I ENDS ⭐⭐----------------------------------------
+

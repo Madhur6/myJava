@@ -49,24 +49,24 @@ ________________________________________________________________________________
 		Interface	                Purpose
 
 		- Iterable<E>	           -> Super-interface for `for-each` loop (Any class that implements `Iterable` can be used inside "for-each")
-				               -> Collection<E> extends `Iterable`
+				                   -> Collection<E> extends `Iterable`
 
 		- Collection<E>            -> Root interface for most collection types
-				               -> Adds basic operations: add() | remove() | size() | contains()
+				                   -> Adds basic operations: add() | remove() | size() | contains()
 
-		- List<E>	           -> Ordered collection, Allows duplicates
+		- List<E>	               -> Ordered collection, Allows duplicates
 
-		- Set <E> 	           -> No duplicates
+		- Set <E> 	               -> No duplicates
 
 		- SortedSet<E>	           -> Set with sorted order
 
 		- NavigableSet<E>          -> Extends `SortedSet` with navigation
 
-		- Queue<E>	           -> FiFo collections
+		- Queue<E>	               -> FiFo collections
 
-		- Deque<E>	          <-> Double-ended queue
+		- Deque<E>	              <-> Double-ended queue
 
-		- Map<K, V>	           -> Key-Value pairs (not part of Collection)
+		- Map<K, V>	               -> Key-Value pairs (not part of Collection)
 
 		- SortedMap<K,V>           -> Sorted keys in a map
 
@@ -142,10 +142,10 @@ ________________________________________________________________________________
 
 
 	⭐ Queue / Deque Implementations
+    
+    	        	Class                Feature
 
-    		Class                Feature
-
-	        - PriorityQueue         -> Elements ordered by priority (min-heap)
+	        - PriorityQueue             -> Elements ordered by priority (min-heap)
                 - ArrayDeque            -> Fast deque, stack & queue replacement
                 - LinkedList            -> Implements List + Queue + Deque
                 - PriorityBlockingQueue -> Thread-safe priority queue (concurrent)
@@ -197,9 +197,9 @@ ________________________________________________________________________________
 
 💡: Check this out 😁
 	
-	Component		Examples			            purpose
+	Component		Examples			                purpose
 	
-	Interfaces 		List/Set/Map/queue... 		    Define std behaviours
+	Interfaces 		List/Set/Map/queue... 		        Define std behaviours
 
 	Classes			ArrayList/HashMap/TreeSet...	    Actual data structures
 

@@ -130,7 +130,7 @@ Q. Difference BW Abstract Class & Interface❔
                                                |
   - Can have instance variables.               |   - Only constants (public static final).
                                                |
-  - Single Level inheritence.(Extends 1 class) |   - Achieves multiple inheritence.
+  - A class can extend only 1 abstract class   |   - Achieves multiple inheritence.
                                                |     [A class can implement multiple interfaces]
                                                |          
                                                |

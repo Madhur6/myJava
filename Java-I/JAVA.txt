@@ -6,7 +6,7 @@
 
 💡 CHAPTER III : Object-Oriented Programming (OOPs😅) (Classes and Objects State and Behavior)
 
-💡 CHAPTER IV  : Main Method 🦸‍♂️
+💡 CHAPTER IV  : Main Method 🦸‍♂️, Constructor, Variables & Operations etc...
 
 💡 CHAPTER V   : Data Types 🐒 (Primitive vs. Object Reference Types & Examples and Characteristics)
 
@@ -49,24 +49,24 @@ ________________________________________________________________________________
 		Interface	                Purpose
 
 		- Iterable<E>	           -> Super-interface for `for-each` loop (Any class that implements `Iterable` can be used inside "for-each")
-				                   -> Collection<E> extends `Iterable`
+				               -> Collection<E> extends `Iterable`
 
 		- Collection<E>            -> Root interface for most collection types
-				                   -> Adds basic operations: add() | remove() | size() | contains()
+				               -> Adds basic operations: add() | remove() | size() | contains()
 
-		- List<E>	               -> Ordered collection, Allows duplicates
+		- List<E>	           -> Ordered collection, Allows duplicates
 
-		- Set <E> 	               -> No duplicates
+		- Set <E> 	           -> No duplicates
 
 		- SortedSet<E>	           -> Set with sorted order
 
 		- NavigableSet<E>          -> Extends `SortedSet` with navigation
 
-		- Queue<E>	               -> FiFo collections
+		- Queue<E>	           -> FiFo collections
 
-		- Deque<E>	              <-> Double-ended queue
+		- Deque<E>	          <-> Double-ended queue
 
-		- Map<K, V>	               -> Key-Value pairs (not part of Collection)
+		- Map<K, V>	           -> Key-Value pairs (not part of Collection)
 
 		- SortedMap<K,V>           -> Sorted keys in a map
 
@@ -137,20 +137,20 @@ ________________________________________________________________________________
 
 		- ArrayList      -> Fast, resizable array, good for indexing
 		- LinkedList     -> Doubly Linked List, Good for insertion/removal
-		- Vector 	     -> Legacy version of `ArrayList`, Synchronized
-		- Stack 	     -> Legacy, extends `Vector`(LIFO)
+		- Vector 	 -> Legacy version of `ArrayList`, Synchronized
+		- Stack 	 -> Legacy, extends `Vector`(LIFO)
 
 
 	⭐ Queue / Deque Implementations
-    
-    	Class                Feature
 
-	    - PriorityQueue         -> Elements ordered by priority (min-heap)
-        - ArrayDeque            -> Fast deque, stack & queue replacement
-        - LinkedList            -> Implements List + Queue + Deque
-        - PriorityBlockingQueue -> Thread-safe priority queue (concurrent)
-        - DelayQueue            -> Holds elements until delay expires
-        - ConcurrentLinkedQueue -> High-performance non-blocking queue
+    		Class                Feature
+
+	        - PriorityQueue         -> Elements ordered by priority (min-heap)
+                - ArrayDeque            -> Fast deque, stack & queue replacement
+                - LinkedList            -> Implements List + Queue + Deque
+                - PriorityBlockingQueue -> Thread-safe priority queue (concurrent)
+                - DelayQueue            -> Holds elements until delay expires
+                - ConcurrentLinkedQueue -> High-performance non-blocking queue
 
 
 	⭐ Set Implementations
@@ -159,7 +159,7 @@ ________________________________________________________________________________
 
 		- HashSet        -> No duplicates, No ordering
 		- LinkedHashSet  -> Maintains insertion order
-		- TreeSet	     -> Sorted Set (Uses Red-Black Tree)
+		- TreeSet	 -> Sorted Set (Uses Red-Black Tree)
 
 
 	⭐ Map Implementations
@@ -181,8 +181,8 @@ ________________________________________________________________________________
 	    |
 	COLLECTION
 	/   |     \
- LIST  SET   QUEUE                         ✨sub-interfaces✨
-   /     |       \
+    LIST  SET   QUEUE                      ✨sub-interfaces✨
+      /     |       \
  ARRAYLIST HASHSET PRIORITY-QUEUE          ✨Implementation✨
  LINKEDLIST TREESET ARRAY-DEQUE
 
@@ -197,9 +197,9 @@ ________________________________________________________________________________
 
 💡: Check this out 😁
 	
-	Component		Examples			                purpose
+	Component		Examples			            purpose
 	
-	Interfaces 		List/Set/Map/queue... 		        Define std behaviours
+	Interfaces 		List/Set/Map/queue... 		    Define std behaviours
 
 	Classes			ArrayList/HashMap/TreeSet...	    Actual data structures
 
@@ -293,7 +293,7 @@ ________________________________________________________________________________
    src(.java)
 	|
 	|
-       javac
+    |  javac
 	|
 	v
    bytecode(.class)      <-platform-independent
@@ -395,7 +395,7 @@ ________________________________________________________________________________
 
 
 ----------------------------------------⭐⭐ CHAPTER IV ⭐⭐----------------------------------------
-#4 ⭐ Main Method 🦸‍♂️ ⭐
+#4 ⭐ Main Method 🦸‍♂️, Constructor, Variables & Operations etc...⭐
 
 
 
@@ -417,6 +417,281 @@ ________________________________________________________________________________
 
 
 
+_______________________________________________________________________________________
+💡: ⭐ Constructor ⭐
+
+```Java
+class Student {
+	String name;
+	int age;
+
+	// ⭐ If no constructor is defined by the programmer,
+	//    Java automatically provides a DEFAULT constructor
+	//    - Student(){}
+
+
+	// Explicit No-Argument Constructor
+	Student(){
+		// Initializes object with default values
+	}
+
+
+	// Parameterized Constructor
+	Student(String inputName, int inputAge){
+		this.name = inputName;
+		this.age = inputAge;
+	}
+
+	
+	// Copy Constructor (User-Defined)
+	// Java doesn't provide a built-in copy constructor
+	// We must define it manually
+
+	Student(Student s){
+		this.name = s.name;
+		this.age = s.age;
+	}
+}
+```
+_______________________________________________________________________________________
+
+
+
+
+_______________________________________________________________________________________
+💡: ⭐ Constructor ⭐
+
+
+```Java
+class Student {
+	String name;
+	int age;
+
+	// ⭐ If no constructor is defined by the programmer,
+	//    Java automatically provides a DEFAULT constructor
+	//    - Student(){}
+
+
+	// Explicit No-Argument Constructor
+	Student(){
+		// Initializes object with default values
+	}
+
+
+	// Parameterized Constructor
+	Student(String inputName, int inputAge){
+		this.name = inputName;
+		this.age = inputAge;
+	}
+
+	
+	// Copy Constructor (User-Defined)
+	// Java doesn't provide a built-in copy constructor
+	// We must define it manually
+
+	Student(Student s){
+		this.name = s.name;
+		this.age = s.age;
+	}
+}
+```
+
+
+⚠️ Notes:
+- Constructor name must be same as class-name
+- Constructor don't have a return type
+- Constructors are called automatically during object creation
+- Constructors can be overloaded
+- If any constructor is defined, Java won't create a default one
+- Copy constructor creates a new object with copied values
+
+
+```Java
+// Inside the main method👀
+Student s1 = new Student("Harry", 12);
+
+Student s2 = new Student(s1); // copy constructor
+
+```
+_______________________________________________________________________________________
+
+
+
+
+
+_______________________________________________________________________________________
+💡: ⭐ Variables ⭐
+
+⭐ A variable is a name given to a memory location that stores some data.
+⭐ Used to store data & retrieve data during program execution
+⭐ The value stored in a variable can change, Hence the term "variable"
+
+⭐ Naming Rules & Conventions:
+	- Java is case-sensitive
+	- Must start with:
+		- A letter (a-z, A-Z) or underscore (_)
+
+	- Can not start with a digit
+	- Follow camelCase convention
+	- Must NOT use reserved keywords (int, new, class etc)
+
+
+⭐ Var keyword (Type Interface):
+	- Introduced in Java 10
+	- Type is inferred at compile-time
+	- Once inferred, The type can't change
+
+	⚠️ Var can only be used for local-variables, Not instance or static variables.
+
+	```Java
+		var num = 42;  // Compiler infers type as int
+		num = "hello"; // ❌ Not allowed  
+	```
+
+⭐ Types of Variables:
+
+	- Static Variables:
+		- Class-Level ✔️
+		- Belong to the class, Not to any object
+		- Shared across all instances
+		- Declared using `static` keyword
+	
+	- Instance Variables:
+		- Object-Level ✔️
+		- Declared inside a class but outside methods
+		- Each object has its own copy
+
+	- Final Variables:
+		- Value can't be modified once initialized
+		- Used to create constants
+
+_______________________________________________________________________________________
+
+
+
+
+
+
+
+_______________________________________________________________________________________
+💡: ⭐ Operations ⭐
+
+⭐ Increment Operators
+```Java
+int x = 5, y = 10;
+
+int res = x++ + ++x;
+// x++ → uses 5, Then x becomes 6
+// ++x → Increments x to 7, Then uses 7
+// Result: 5 + 7 = 12
+
+
+int res1 = ++y + y++;
+// ++y → increments y to 6, Then uses 6
+// y++ → uses 6, then increments y to 7
+// Result: 6 + 6 = 12
+
+// Same logic applies to decrement operators (--x, x--)
+
+```
+_______________________________________________________________________________________
+
+
+
+
+
+
+_______________________________________________________________________________________
+💡: ⭐ Packages ⭐
+
+⭐ Packages in Java:
+	- A pkg is a namespace that groups related classes, interfaces & sub-packages
+	- Used to organize code, avoid name conflicts, & improve maintainability
+
+
+⭐ Types of Pkgs:
+
+	- Built-In Pkgs
+		- Provided by Java
+		- Ex. java.util, java.lang(automatically imported), java.io, java.time
+
+	- User-Defined Pkgs:
+		- Created by developers to organize application code
+
+
+⭐ Steps to create a PKG:
+	- 1. create a folder -> ur_pkg_name/
+	```Java
+	package ur_pkg_name;
+
+	public class FileName{
+		public static void main(String[] args){
+			System.out.println("Hello, Pkg!");
+		}
+	}
+	```
+
+	- 2. Compile the code:
+		- javac ur_pkg_name/FileName.java
+
+	- 3. Run the program:
+		- java ur_pkg_name.FileName
+
+	⚠️ Note:
+		- A class outside a PKG can't access a default-access class from another pkg.
+		- Always use a public-class with main() when accessing from outside the pkg.
+		- If files are in the current working directory, No extra configuration is needed
+		- Otherwise, Configue CLASSPATH:
+			- Temporary(cmd line):
+				- set CLASSPATH=pkg_path;main_class_path 
+		
+			- Permanent:
+				- Set env-var. CLASSPATH in system settings
+
+_______________________________________________________________________________________
+
+
+
+
+
+_______________________________________________________________________________________
+💡: ⭐ Access Modifiers ⭐
+
+⭐ Types of Access Modifiers
+
+- Types:
+
+--------------------------------------------------------------------------------------------------------------------
+
+modifiers   - Same-Class      | - Same Package      | - Same Pkg          | - Diff. Pkg       | - Diff. Pkg 
+                              |   & Sub-class       |   & non-subclass    |  & Sub-Class      | & non-sub-class
+--------------------------------------------------------------------------------------------------------------------
+private         yes                  no                    no                   no                   no
+
+default         yes                  yes                   yes                  no                   no
+
+protected       yes                  yes                   yes                  yes                  no
+
+public          yes                  yes                   yes                  yes                  yes
+
+--------------------------------------------------------------------------------------------------------------------
+
+⚠️ Important notes:
+	- Java supports 4 access-modifiers
+	- OverRiding Rule:
+		- An overridden method can increase visibility but cannot reduce it.
+		- protected  →  public
+		- public     →  protected/private
+	
+	- Methods that CAN'T be overridden:
+		- final methods
+		- static methods
+		- private methods
+
+_______________________________________________________________________________________
+
+
+
 
 _______________________________________________________________________________________
 💡: ⭐ Revise ⭐
@@ -429,11 +704,13 @@ ________________________________________________________________________________
    - scopeEx.java
    - consumeBuffer.java
    - stringArgs.java
+   - incrementEx.java
    - whatIsClass.java
    - whatIsMethod.java
    - whatIsOops.java
    - staticVar.java
    - staticMethod.java
+   - accessModifiers.java
 
 _______________________________________________________________________________________
 

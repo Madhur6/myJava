@@ -130,7 +130,7 @@ Q. Difference BW Abstract Class & Interface❔
                                                |
   - Can have instance variables.               |   - Only constants (public static final).
                                                |
-  - A class can extend only 1 abstract class   |   - Achieves multiple inheritence.
+  - A class can extend only one abstract class |   - Achieves multiple inheritence.
                                                |     [A class can implement multiple interfaces]
                                                |          
                                                |
@@ -229,6 +229,29 @@ ________________________________________________________________________________
             - It must be done Explicitly.
 
 _______________________________________________________________________________________
+
+
+
+
+
+
+
+
+_______________________________________________________________________________________
+💡: ⭐ Revise ⭐
+
+
+## Revise the following files:
+   - encapsulationEx.java
+   - whatIsInheritence.java
+   - InheritenceWizard.java
+   - InheritenceEx.java
+   - abstractEx.java
+   - InterfaceEx.java
+
+_______________________________________________________________________________________
+
+
 
 
 --------------------------------------⭐⭐ CHAPTER I ENDS ⭐⭐----------------------------------------

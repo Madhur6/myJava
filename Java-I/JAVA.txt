@@ -30,7 +30,7 @@
 	- Java 7   (2011)	-> Try-with-resources, multi-catch
 	- Java 8   (2014)	-> Lambdas, Streams, Functional Interfaces, Optional class
 	- Java 9   (2017)	-> Module system
-	- Java10-17(2018-21)	-> var, Records, Sealed classes
+	- Java10-17(2018-21)-> var, Records, Sealed classes
 	- Java 21  (2023)	-> (LTS) Leveraging Virtual Threads (Project Loom), String templates
 	- Java 25  (2025 ~)	-> More language & JVM enhancements
 
@@ -49,29 +49,28 @@ ________________________________________________________________________________
 		Interface	                Purpose
 
 		- Iterable<E>	           -> Super-interface for `for-each` loop (Any class that implements `Iterable` can be used inside "for-each")
-				               -> Collection<E> extends `Iterable`
+				                   -> Collection<E> extends `Iterable`
 
 		- Collection<E>            -> Root interface for most collection types
-				               -> Adds basic operations: add() | remove() | size() | contains()
+				                   -> Adds basic operations: add() | remove() | size() | contains()
 
-		- List<E>	           -> Ordered collection, Allows duplicates
+		- List<E>	               -> Ordered collection, Allows duplicates
 
-		- Set <E> 	           -> No duplicates
+		- Set <E> 	               -> No duplicates
 
 		- SortedSet<E>	           -> Set with sorted order
 
 		- NavigableSet<E>          -> Extends `SortedSet` with navigation
 
-		- Queue<E>	           -> FiFo collections
+		- Queue<E>	               -> FiFo collections
 
-		- Deque<E>	          <-> Double-ended queue
+		- Deque<E>	              <-> Double-ended queue
 
-		- Map<K, V>	           -> Key-Value pairs (not part of Collection)
+		- Map<K, V>	               -> Key-Value pairs (not part of Collection)
 
 		- SortedMap<K,V>           -> Sorted keys in a map
 
 		- NavigableMap<K,V>        -> Extended sorted map with navigation
-
 
 
 
@@ -137,20 +136,20 @@ ________________________________________________________________________________
 
 		- ArrayList      -> Fast, resizable array, good for indexing
 		- LinkedList     -> Doubly Linked List, Good for insertion/removal
-		- Vector 	 -> Legacy version of `ArrayList`, Synchronized
-		- Stack 	 -> Legacy, extends `Vector`(LIFO)
+		- Vector 	     -> Legacy version of `ArrayList`, Synchronized
+		- Stack 	     -> Legacy, extends `Vector`(LIFO)
 
 
 	⭐ Queue / Deque Implementations
 
-    		Class                Feature
+		Class	            Feature
 
-	        - PriorityQueue         -> Elements ordered by priority (min-heap)
-                - ArrayDeque            -> Fast deque, stack & queue replacement
-                - LinkedList            -> Implements List + Queue + Deque
-                - PriorityBlockingQueue -> Thread-safe priority queue (concurrent)
-                - DelayQueue            -> Holds elements until delay expires
-                - ConcurrentLinkedQueue -> High-performance non-blocking queue
+	    - PriorityQueue         -> Elements ordered by priority (min-heap)
+        - ArrayDeque            -> Fast deque, stack & queue replacement
+        - LinkedList            -> Implements List + Queue + Deque
+        - PriorityBlockingQueue -> Thread-safe priority queue (concurrent)
+        - DelayQueue            -> Holds elements until delay expires
+        - ConcurrentLinkedQueue -> High-performance non-blocking queue
 
 
 	⭐ Set Implementations
@@ -159,32 +158,32 @@ ________________________________________________________________________________
 
 		- HashSet        -> No duplicates, No ordering
 		- LinkedHashSet  -> Maintains insertion order
-		- TreeSet	 -> Sorted Set (Uses Red-Black Tree)
+		- TreeSet	     -> Sorted Set (Uses Red-Black Tree)
 
 
 	⭐ Map Implementations
 	  
 		Class	            Feature
 
-		- HashMap        -> Key-value pairs, Fast access
-		- LinkedHashMap  -> Maintains insertion order
-		- TreeMap        -> Sorted Keys
-		- HashTable 	 -> Legacy, synchronized
-		- Properties	 -> Used for config files, extends `HashTable`
-		- WeakHashMap	 -> Keys eligible for GC when no strong ref.
-		- ConcurrentHashMap Thread-safe map (JAVA 5+)
+		- HashMap         -> Key-value pairs, Fast access
+		- LinkedHashMap   -> Maintains insertion order
+		- TreeMap         -> Sorted Keys
+		- HashTable 	  -> Legacy, synchronized
+		- Properties	  -> Used for config files, extends `HashTable`
+		- WeakHashMap	  -> Keys eligible for GC when no strong ref.
+		- ConcurrentHashMap> Thread-safe map (JAVA 5+)
 
 
 💡: JCF Hierarchy:
 	ITERABLE 
 	    ^
 	    |
-	COLLECTION
-	/   |     \
+	 COLLECTION
+	 /   |     \
     LIST  SET   QUEUE                      ✨sub-interfaces✨
-      /     |       \
- ARRAYLIST HASHSET PRIORITY-QUEUE          ✨Implementation✨
- LINKEDLIST TREESET ARRAY-DEQUE
+  /        |       \
+ARRAYLIST  HASHSET  PRIORITY-QUEUE         ✨Implementation✨
+LINKEDLIST TREESET  ARRAY-DEQUE
 
 
 
@@ -197,16 +196,16 @@ ________________________________________________________________________________
 
 💡: Check this out 😁
 	
-	Component		Examples			            purpose
+	Component		Examples			                purpose
 	
-	Interfaces 		List/Set/Map/queue... 		    Define std behaviours
+	Interfaces 		List/Set/Map/queue... 		        Define std behaviours
 
 	Classes			ArrayList/HashMap/TreeSet...	    Actual data structures
 
 	Utilities		Collections/Arrays/Comparator       Sorting, searching...
-				  /Enumeration/Iterator/Objects
-				  /ListIterator/AbstractCollection
-				  /AbstractList...
+				    /Enumeration/Iterator/Objects
+				    /ListIterator/AbstractCollection
+				    /AbstractList...
 
 	Legacy classes		Vector/HashTable/Stack		    For backward compatibility
 	
@@ -306,6 +305,7 @@ ________________________________________________________________________________
 	v
    Native-machine-code   <-JVM itself is platform-dependent
 
+
 ⭐ Java source code (.java) is compiled by javac into `bytecode`
 ⭐ JVM loads, verifies & executes "byte-code"
 ⭐ Initially, byte-code is interpreted & JIT(just-in-time compiler) compiles frequently-executed-code(hot-code🔥) into `native-machine-code`
@@ -365,7 +365,7 @@ ________________________________________________________________________________
 ⭐ JVM ----------------------> Objects ----------------------> Class (Blueprint📰)
              creates                        with the help of
                                                   ^
-					 	  |
+					 	                          |
                                                   | state & behaviour information
                                                   |
                                                   |

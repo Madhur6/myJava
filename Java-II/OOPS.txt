@@ -124,28 +124,110 @@ Q. Difference BW Abstract Class & Interface❔
 
 
 - **Abstract-Class**                           | - **Interface**
-
-  - Can have both abstract & concrete method.  |   - All methods are abstract by default.
-                                               |     [Can also have default & static methods (uses "default" keyword)]    
                                                |
-  - Can have instance variables.               |   - Only constants (public static final).
+  - Methods can use ANY access-modifiers       |   - Methods are:
+                                               |        • public by default (abstract | default | static)
+                                               |        • private allowed (Java 9+ | Not for abstract methods)
                                                |
-  - A class can extend only one abstract class |   - Achieves multiple inheritence.
-                                               |     [A class can implement multiple interfaces]
+                                               |
+  - Can have both abstract & concrete method.  |   - Methods can be:
+                                               |        • abstract (public | NOT static)
+                                               |        • default  (public | NOT static)
+                                               |        • private  (helper methods, Java 9+)
+                                               |        • static   (public | private(Java 9+) | can't override)
+                                               |
+                                               |
+  - Can have instance variables.               |   - Variables are ALWAYS: public static final (constants)
+                                               |
+  - A class can extend ONLY ONE abstract class |   - A class can implement MULTIPLE interfaces
+    [Single Inheritence]                       |     [Multiple inheritence supported]
                                                |          
-                                               |
-  - Access Modifiers.                          |   - All methods are public.
                                                |
   - Can have `Constructors`                    |   - Cannot have  `Constructors`
                                                |
-  - Methods can have body                      |   - Methods can not have body untilunless they're declared as "default" and "static" methods.
+  - Supports PARTIAL ABSTRACTION               |   - Supports full abstraction (By Design)
                                                |
-  -                                            |   - @Override annotation is not mandatory but highly recommended.
+  - Abstract methods can't be STATIC           |   - Abstract methods can't be STATIC 
                                                |
-                                               |   - Lambda [ Functional Interfaces can be implemented using this]
+                                               |   - @Override annotation is not mandatory but highly recommended.
+                                               |
+                                               |   - Functional Interfaces support `Lambda`
+
+
+⚠️ NOTES:
+    - Abstract methods can not be static❌
+        -💡 Cause, Static methods belongs to the class/interface itself, 
+        - & Abstract-methods must be overridden by sub-classes
+        -💡Static-Methods can't be over-ridden...
+
+    - Default method in an Interface (Java 8+ | for backward compatibility with lambdas)
+        - default is a keyword
+        - used only in interface
+        - Allows an interface to have a method with a body
+        - Is implicitly public & non-static
+        - Can be overridden by implementing classes
+        - 💡 Has nothing to do with "default" access-modifiers(Java 1.0)
+
+    - Protected access-modifier is not allowed in an "interface"
+
+_______________________________________________________________________________________
+
+
+
+
+
+
+
+---------------------------------------------------------------------------------------
+💡: ⭐ TYPES OF INTERFACES ⭐
+
+⭐ 1. Normal Interface:
+    - An interface with multiple abstract methods
+    - Helpful when a class must implement more than 1 behaviour
+    - Can't be implemented using lambda expressions
+
+
+⭐ 2. Functional Interface:
+    - An interface with exactly 1 Abstract Method
+    - May contain:
+        • default methods
+        • static methods
+        • private methods
+    - Used in lambda expressions
+    - Marked using @FunctionalInterface (optional but recommended)
+
+    - Ex. Predicate<T>      | Function<T, R>      | Consumer<T>      | Supplier<T> 
+          BiPredicate<T, U> | BiFunction<T, U, V> | UnaryOperator<T>
+          BinaryOperator<T> | Runnable etc..
+    ```Java
+    @FunctionalInterface
+    interface Calculator{int add(int a, int b);}
+
+    Calculator c = (a,b) -> a+b; // Lambda 😉
+    System.out.println(c.add(10,20));
+    ```
+
+
+
+⭐ 3. Marker Interface:
+    - Contains NO methods
+    - Used to mark a class
+    - JVM or frameworks check for it's presence
+    - Used for metadata
+
+    - Ex. Serializable | Cloneable | RandomAccess
+    ```Java
+    interface Serializable{}
+    ```
+
+---------------------------------------------------------------------------------------
+
 
 
 _______________________________________________________________________________________
+
+
+
 
 
 
@@ -247,7 +329,8 @@ ________________________________________________________________________________
    - InheritenceWizard.java
    - InheritenceEx.java
    - abstractEx.java
-   - InterfaceEx.java
+   - interfaceEx.java
+   - interfaceLambdaEx.java
 
 _______________________________________________________________________________________
 

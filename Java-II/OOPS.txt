@@ -249,7 +249,7 @@ ________________________________________________________________________________
     🐥 Ex. Animal → Dog / Elephant / Lion
 
     
-   ✔️ ⭐ Types of Inheritance ⭐
+   ✔️ ⭐ Types of Polymorphism ⭐
         
         - 1). Compile-Time Polymorphism (Static Polymorphism):
 

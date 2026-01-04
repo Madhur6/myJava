@@ -1,5 +1,7 @@
 import java.util.*;
 
+package begin;
+
 
 
 //⭐ pillars of oops:
@@ -38,6 +40,11 @@ import java.util.*;
 //        - Decision made at *runtime*
 //
 //        - Requires Inheritance
+
+
+
+
+
 
 
 
@@ -91,17 +98,65 @@ class Cat extends Animal {
 }
 
 
+
+
+
+
 public class whatIsRuntimePoly {
 	public static void main(String[] args) {
-//        Animal a1 = new Dog(); // UpCasting
 		
-		Dog bob = new Dog();
+//      Runtime-Polymorphism (Method-Overriding)
+		Dog pluto = new Dog();
 		Duck donald = new Duck();
 		Cat tom = new Cat();
         
-		// Same method call -> Different behavior
-		bob.speak();
+//      Same method call -> Different behavior
+		pluto.speak();
 		donald.speak();
 		tom.speak();
+		
+		
+		
+//________________________________________________________________
+
+//      Ignore this: Just for creating spaces b/w output on the cli.......
+        System.out.println("********************************************************************************************************");
+        System.out.println("                                                                                                        ");
+        System.out.println("                                    ⭐ upandcode.com ⭐                                                  ");
+        System.out.println("                                                                                                        ");
+        System.out.println("********************************************************************************************************");
+
+
+
+		
+		
+		
+//      Advance-Version 😉
+		
+//      Animal a1 = new Dog();  // Upcasting | 
+//      Animal a2 = new Duck(); // Upcasting |  
+//      Animal a3 = new Cat();  // Upcasting | 
+        
+//      <<Read OOPS.txt>>
+//      Animal[] objArr = {a1, a2, a3}; // Works exactly like below objArr 
+        
+		Animal[] objArr = {pluto, donald, tom}; // Object Array👀
+		
+//      ⚠️ Note:
+//		As animalSpeak() is not a 'Static-method', I can not instantiate it directly...
+//      So i have to create an object of my 'main class' and invoke animalSpeak through that object...
+
+	
+		whatIsRuntimePoly mainClassObj = new whatIsRuntimePoly();
+		
+		for (int i = 0; i < 3; i++) {
+			
+//			animalSpeak(objArr[i]); // ❌
+			
+			mainClassObj.animalSpeak(objArr[i]);
+		}	
     }
+	
+	
+	public void animalSpeak(Animal animal) {animal.speak();}
 }

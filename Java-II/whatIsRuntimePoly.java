@@ -1,8 +1,3 @@
-import java.util.*;
-
-package begin;
-
-
 
 //⭐ pillars of oops:
 
